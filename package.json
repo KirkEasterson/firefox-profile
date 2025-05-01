@@ -1,0 +1,25 @@
+{
+  "name": "firefox-profile",
+  "version": "1.0.0",
+  "description": "This repo contains my personal configuration for firefox, along with utilities for installing them. The install script will detect the current firefox profile and create symlinks to the necessary directories.",
+  "main": "eslint.config.js",
+  "scripts": {
+    "lint": "npx eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KirkEasterson/firefox-profile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/KirkEasterson/firefox-profile/issues"
+  },
+  "homepage": "https://github.com/KirkEasterson/firefox-profile#readme",
+  "devDependencies": {
+    "@eslint/css": "0.7.0",
+    "eslint": "9.25.1"
+  }
+}
