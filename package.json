@@ -4,7 +4,8 @@
   "description": "This repo contains my personal configuration for firefox, along with utilities for installing them. The install script will detect the current firefox profile and create symlinks to the necessary directories.",
   "main": "eslint.config.js",
   "scripts": {
-    "lint": "npx eslint"
+    "lint": "npx eslint",
+    "lint:fix": "npx eslint --fix"
   },
   "repository": {
     "type": "git",

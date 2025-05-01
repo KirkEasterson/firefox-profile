@@ -3,7 +3,7 @@ import css from "@eslint/css";
 
 export default defineConfig([
   {
-    files: ["**.js"],
+    files: ["./firefox/*.js"],
     rules: {
       semi: "error",
       "prefer-const": "error",
@@ -11,7 +11,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["**.css"],
+    files: ["./firefox/userChrome/*.css"],
     plugins: {
       css,
     },
