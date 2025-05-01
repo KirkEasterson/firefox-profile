@@ -1,4 +1,4 @@
-user_pref("toolkit.legacyUserProfileCustomizations.stylesheets" true);
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Remaining modified from:
 //    - https://github.com/yokoffing/Betterfox/blob/main/Fastfox.js
