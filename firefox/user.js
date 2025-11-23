@@ -57,7 +57,7 @@ user_pref("content.notify.interval", 100000); // (.10s); default=120000 (.12s)
 // [WARNING] Disabling this may cause a delay when opening a new tab in Firefox.
 // [1] https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
 // [2] https://github.com/arkenfox/user.js/issues/1556
-//user_pref("browser.newtab.preload", true); // DEFAULT
+user_pref("browser.newtab.preload", true); // DEFAULT
 
 // PREF: disable EcoQoS [WINDOWS]
 // Background tab processes use efficiency mode on Windows 11 to limit resource use.
@@ -72,8 +72,8 @@ user_pref("content.notify.interval", 100000); // (.10s); default=120000 (.12s)
 // PREF: control how tabs are loaded when a session is restored
 // true=Tabs are not loaded until they are selected (default)
 // false=Tabs begin to load immediately.
-//user_pref("browser.sessionstore.restore_on_demand", true); // DEFAULT
-//user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
+user_pref("browser.sessionstore.restore_on_demand", false); // DEFAULT
+user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", false);
 //user_pref("browser.sessionstore.restore_tabs_lazily", true); // DEFAULT
 
 // PREF: disable preSkeletonUI on startup [WINDOWS]
@@ -92,15 +92,15 @@ user_pref("content.notify.interval", 100000); // (.10s); default=120000 (.12s)
 // [3] https://www.reddit.com/r/firefox/comments/tbphok/is_setting_gfxwebrenderprecacheshaders_to_true/i0bxs2r/
 // [4] https://www.reddit.com/r/firefox/comments/z5auzi/comment/ixw65gb?context=3
 // [5] https://gist.github.com/RubenKelevra/fd66c2f856d703260ecdf0379c4f59db?permalink_comment_id=4532937#gistcomment-4532937
-//user_pref("gfx.webrender.all", true); // enables WR + additional features
-//user_pref("gfx.webrender.precache-shaders", true); // longer initial startup time
-//user_pref("gfx.webrender.compositor", true); // DEFAULT WINDOWS macOS
-//user_pref("gfx.webrender.compositor.force-enabled", true); // enforce
+user_pref("gfx.webrender.all", true); // enables WR + additional features
+user_pref("gfx.webrender.precache-shaders", true); // longer initial startup time
+user_pref("gfx.webrender.compositor", true); // DEFAULT WINDOWS macOS
+user_pref("gfx.webrender.compositor.force-enabled", true); // enforce
 
 // PREF: if your hardware doesn't support Webrender, you can fallback to Webrender's software renderer
 // [1] https://www.ghacks.net/2020/12/14/how-to-find-out-if-webrender-is-enabled-in-firefox-and-how-to-enable-it-if-it-is-not/
-//user_pref("gfx.webrender.software", true); // Software Webrender uses CPU instead of GPU
-//user_pref("gfx.webrender.software.opengl", true); // LINUX
+user_pref("gfx.webrender.software", true); // Software Webrender uses CPU instead of GPU
+user_pref("gfx.webrender.software.opengl", true); // LINUX
 
 // PREF: GPU-accelerated Canvas2D
 // Uses Accelerated Canvas2D for hardware acceleration of Canvas2D.
@@ -113,7 +113,7 @@ user_pref("content.notify.interval", 100000); // (.10s); default=120000 (.12s)
 // [2] https://github.com/yokoffing/Betterfox/issues/153
 // [3] https://github.com/yokoffing/Betterfox/issues/198
 //user_pref("gfx.canvas.accelerated", true); // [DEFAULT FF133+]
-//user_pref("gfx.canvas.accelerated.cache-items", 8192); // DEFAULT FF135+; Chrome=4096
+user_pref("gfx.canvas.accelerated.cache-items", 8192); // DEFAULT FF135+; Chrome=4096
 user_pref("gfx.canvas.accelerated.cache-size", 512); // default=256; Chrome=512
 user_pref("gfx.content.skia-font-cache-size", 20); // default=5; Chrome=20
 // [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1239151#c2
@@ -263,8 +263,8 @@ user_pref("browser.cache.disk.enable", false);
 // [1] https://kb.mozillazine.org/Browser.cache.memory.capacity#-1
 // [2] https://searchfox.org/mozilla-central/source/netwerk/cache2/CacheObserver.cpp#94-125
 // [3] https://github.com/WaterfoxCo/Waterfox/commit/3fed16932c80a2f6b37d126fe10aed66c7f1c214
-//user_pref("browser.cache.memory.capacity", -1); // DEFAULT; 256000=256 MB; 512000=500 MB; 1048576=1GB, 2097152=2GB
-//user_pref("browser.cache.memory.max_entry_size", 10240); // (10 MB); default=5120 (5 MB)
+user_pref("browser.cache.memory.capacity", -1); // DEFAULT; 256000=256 MB; 512000=500 MB; 1048576=1GB, 2097152=2GB
+user_pref("browser.cache.memory.max_entry_size", 10240); // (10 MB); default=5120 (5 MB)
 
 // PREF: amount of Back/Forward cached pages stored in memory for each tab
 // Pages that were recently visited are stored in memory in such a way
@@ -275,7 +275,7 @@ user_pref("browser.cache.disk.enable", false);
 // is no reason for Firefox to keep memory for this.
 // -1=determine automatically (8 pages)
 // [1] https://kb.mozillazine.org/Browser.sessionhistory.max_total_viewers#Possible_values_and_their_effects
-//user_pref("browser.sessionhistory.max_total_viewers", 4);
+user_pref("browser.sessionhistory.max_total_viewers", 12);
 
 /****************************************************************************
  * SECTION: MEDIA CACHE                                                     *
@@ -287,7 +287,7 @@ user_pref("browser.cache.disk.enable", false);
 // PREF: media memory cache
 // [1] https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml#l9652
 // [2] https://github.com/arkenfox/user.js/pull/941
-user_pref("media.memory_cache_max_size", 65536); // default=8192; AF=65536; alt=131072
+user_pref("media.memory_cache_max_size", 131072); // default=8192; AF=65536; alt=131072
 
 // PREF: media cache combine sizes
 //user_pref("media.memory_caches_combined_limit_kb", 524288); // DEFAULT; alt=1048576
@@ -312,8 +312,8 @@ user_pref("media.cache_resume_threshold", 3600); // 60 min; default=30; when a n
  ****************************************************************************/
 
 // PREF: image cache
-//user_pref("image.cache.size", 5242880); // DEFAULT; in MiB; alt=10485760 (cache images up to 10MiB in size)
-user_pref("image.mem.decode_bytes_at_a_time", 32768); // default=16384; alt=65536; chunk size for calls to the image decoders
+user_pref("image.cache.size", 10485760); // DEFAULT; in MiB; alt=10485760 (cache images up to 10MiB in size)
+user_pref("image.mem.decode_bytes_at_a_time", 65536); // default=16384; alt=65536; chunk size for calls to the image decoders
 
 // PREF: set minimum timeout to unmap shared surfaces since they have been last used
 // This is only used on 32-bit builds of Firefox where there is meaningful
@@ -333,8 +333,8 @@ user_pref("image.mem.decode_bytes_at_a_time", 32768); // default=16384; alt=6553
 // [1] https://www.mail-archive.com/support-seamonkey@lists.mozilla.org/msg74561.html
 // [2] https://github.com/yokoffing/Betterfox/issues/279
 // [3] https://ra1ahq.blog/en/optimizaciya-proizvoditelnosti-mozilla-firefox
-//user_pref("network.buffer.cache.size", 65535); // default=32768 (32 kb); 262144 too large
-//user_pref("network.buffer.cache.count", 48); // default=24; 128 too large
+user_pref("network.buffer.cache.size", 65535); // default=32768 (32 kb); 262144 too large
+user_pref("network.buffer.cache.count", 48); // default=24; 128 too large
 
 // PREF: increase the absolute number of HTTP connections
 // [1] https://kb.mozillazine.org/Network.http.max-connections
@@ -361,7 +361,7 @@ user_pref("network.http.pacing.requests.enabled", false);
 
 // PREF: increase DNS cache
 // [1] https://developer.mozilla.org/en-US/docs/Web/Performance/Understanding_latency
-//user_pref("network.dnsCacheEntries", 1000); // default=400
+user_pref("network.dnsCacheEntries", 1000); // default=400
 
 // PREF: adjust DNS expiration time
 // [ABOUT] about:networking#dns
@@ -544,7 +544,7 @@ user_pref("network.predictor.enabled", false);
 // PREF: CSS Masonry Layout [NIGHTLY]
 // [1] https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout
 // [2] https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/
-user_pref("layout.css.grid-template-masonry-value.enabled", true);
+// user_pref("layout.css.grid-template-masonry-value.enabled", true);
 
 // PREF: Prioritized Task Scheduling API [NIGHTLY]
 // [1] https://github.com/yokoffing/Betterfox/issues/355
@@ -565,7 +565,7 @@ user_pref("layout.css.grid-template-masonry-value.enabled", true);
 // and suspend tabs that you have not used in awhile.
 // [1] https://support.mozilla.org/en-US/kb/unload-inactive-tabs-save-system-memory-firefox
 // [2] https://hacks.mozilla.org/2021/10/tab-unloading-in-firefox-93/
-//user_pref("browser.tabs.unloadOnLowMemory", true); // DEFAULT
+user_pref("browser.tabs.unloadOnLowMemory", true); // DEFAULT
 
 // PREF: determine when tabs unload [WINDOWS] [LINUX]
 // Notify TabUnloader or send the memory pressure if the memory resource
@@ -581,7 +581,7 @@ user_pref("layout.css.grid-template-masonry-value.enabled", true);
 // and use this percent value (out of 100) to determine if Firefox is in a
 // low memory scenario.
 // [1] https://dev.to/msugakov/taking-firefox-memory-usage-under-control-on-linux-4b02
-//user_pref("browser.low_commit_space_threshold_percent", 20); // default=5; LINUX
+user_pref("browser.low_commit_space_threshold_percent", 20); // default=5; LINUX
 
 // PREF: determine how long (in ms) tabs are inactive before they unload
 // 60000=1min; 300000=5min; 600000=10min (default)
